@@ -6,28 +6,22 @@ class Lagou(scrapy.Spider):
     start_urls = [
         "https://www.lagou.com/"
     ]
-    
-    cookie = {
-        'user_trace_token':'20170823200708-9624d434-87fb-11e7-8e7c-5254005c3644',
-        'LGUID':'20170823200708-9624dbfd-87fb-11e7-8e7c-5254005c3644 ',
-        'index_location_city':'%E5%85%A8%E5%9B%BD',
-        'JSESSIONID':'ABAAABAAAIAACBIB27A20589F52DDD944E69CC53E778FA9',
-        'TG-TRACK-CODE':'index_code',
-        'X_HTTP_TOKEN':'5c26ebb801b5138a9e3541efa53d578f',
-        'SEARCH_ID':'739dffd93b144c799698d2940c53b6c1',
-        '_gat':'1',
-        'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6':'1511162236,1511162245,1511162248,1511166955',
-        'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6':'1511166955',
-        '_gid':'GA1.2.697960479.1511162230',
-        '_ga':'GA1.2.845768630.1503490030',
-        'LGSID':'20171120163554-d2b13687-cdcd-11e7-996a-5254005c3644',
-        'PRE_UTM':'' ,
-        'PRE_HOST':'www.baidu.com',
-        'PRE_SITE':'https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3D7awz0WxWjKxQwJ9xplXysE6LwOiAde1dreMKkGLhWzS%26wd%3D%26eqid%3D806a75ed0001a451000000035a128181',
-        'PRE_LAND':'https%3A%2F%2Fwww.lagou.com%2F',
-        'LGRID':'20171120163554-d2b13811-cdcd-11e7-996a-5254005c3644'
-    }
 
+    cookie = {
+        'user_trace_token': '20180125171249-e9fd92ef-01af-11e8-9b13-525400f775ce',
+        'LGUID': '20180125171249-e9fd95ac-01af-11e8-9b13-525400f775ce',
+        'index_location_city' : '%E5%85%A8%E5%9B%BD',
+        'JSESSIONID' : 'ABAAABAAAIAACBI12C18146575F6E864E976386E7CDF11A',
+        '_gid' : 'GA1.2.710431785.1517274340',
+        'LGSID' : '20180130145254-323cde27-058a-11e8-a0f2-525400f775ce',
+        'PRE_UTM' : '',
+        'PRE_HOST' : 'blog.csdn.net',
+        'PRE_SITE' : 'http%3A%2F%2Fblog.csdn.net%2Fdangsh_%2Farticle%2Fdetails%2F78587729',
+        'PRE_LAND' : 'https%3A%2F%2Fwww.lagou.com%2Fzhaopin%2FJava%2F',
+        'SEARCH_ID' : '26434cfc03bd497b89c1d78798a2c9db',
+        'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' : '1517274340,1517295174,1517295224,1517295233',
+        'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' : '1517295233',
+        'LGRID' : '20180130145353-557a33c1-058a-11e8-a0f2-525400f775ce'}
     def parse(self , response):
         for item in response.xpath('//div[@class="menu_box"]/div/dl/dd/a'):
             jobClass = item.xpath('text()').extract()
